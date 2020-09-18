@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingRight="10dp"
+    android:paddingLeft="5dp"
+    android:background="?android:attr/activatedBackgroundIndicator"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        app:cardCornerRadius="10dp"
+        card_view:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="true" >
+
+        <ImageView
+            android:id="@+id/summaryImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"/>
+
+
+
+        <ImageView
+            android:id="@+id/ranking_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="top|right"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="3dp"
+            android:scaleType="fitXY"
+            android:visibility="gone" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/summaryTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="8dp"
+        android:lines="3"
+        android:ellipsize="end"
+        android:text=" \n "/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/curatorName"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/colorGray500"
+            app:layout_constraintEnd_toStartOf="@+id/number_of_views"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category_banner" />
+
+        <TextView
+            android:id="@+id/category_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="12sp"
+            android:padding="4dp"
+            android:text="Original Content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corner_pink_4dp"
+            android:scaleType="fitXY"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/summaryKiss"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="12dp"
+            android:ellipsize="end"
+            android:gravity="end|right"
+            android:maxLines="1"
+            android:textColor="@color/colorPinkKiss"
+            app:layout_constraintBottom_toBottomOf="@+id/category_banner"
+            app:layout_constraintEnd_toStartOf="@+id/imageView9"
+            app:layout_constraintStart_toEndOf="@+id/category_banner"
+            app:layout_constraintTop_toTopOf="@+id/category_banner" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="@+id/summaryKiss"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/summaryKiss"
+            app:srcCompat="@drawable/icon_fav" />
+
+        <TextView
+            android:id="@+id/number_of_views"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="end"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="views"
+            android:textColor="#F174AC"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/curatorName" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
